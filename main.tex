@@ -1,0 +1,219 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+
+%% Russian language support
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage[a4paper]{geometry}
+
+%% Figures
+\usepackage{tkz-euclide}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+%% Hyphenation rules
+\usepackage{hyphenat}
+
+%%colorfull
+\usepackage{xcolor}
+
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+\title{Краткий курс геометрии если все совсем плохо}
+\author{Иван Попов}
+
+% DOCUMENT
+\begin{document}
+
+% TITLE
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagenumbering{arabic}
+
+% TOCS
+\tableofcontents
+
+\newpage
+
+\section{Векторная алгебра}
+\textbf{Направленный отрезок} - отрезок с указаным направлением. Направление задается при помощи точки начала и точки конца.\\
+\begin{figure}[h!]
+    \centering
+
+    \begin{tikzpicture}        
+        \tkzDefPoint(0,0){A} \tkzDrawPoint(A) \tkzLabelPoint[left,black](A){$A$}
+        \tkzDefPoint(2,1){B} \tkzDrawPoint(B) \tkzLabelPoint[right,black](B){$B$}
+
+        \tkzDrawSegment[-Triangle](A,B)
+    \end{tikzpicture}
+\caption{Направленный отрезок $\overline{AB}$}
+\end{figure}
+$\overline{AB} \in \overrightarrow{a}$ - направленный отрезок является представителем вектора $\overrightarrow{a}$
+\\
+\fbox{
+    \textbf{Внимание} \underline{Направленный отрезок равен только себе}
+}
+\\
+Совокупность напраленых отрезков является \textbf{вектором}.
+\subsection{Действия над векторами и их свойства(Аксиомпатика Вейля)}
+%%TODO добавить аксиоматику вейля
+\subsubsection{Сложение векторов}
+\paragraph{Правило треугольника}
+$\\\\\overrightarrow{AC}=\overrightarrow{AB}+\overrightarrow{BC}$
+\begin{figure}[h!]
+    \begin{tikzpicture}        
+        \tkzDefPoint(0,0){A} \tkzDrawPoint(A) \tkzLabelPoint[left,black](A){$A$}
+        \tkzDefPoint(2,1){B} \tkzDrawPoint(B) \tkzLabelPoint[right,black](B){$B$}
+        \tkzDefPoint(1,-1){C} \tkzDrawPoint(C) \tkzLabelPoint[right,black](C){$C$}
+
+        \tkzDrawSegment[-Triangle](A,B)
+        \tkzDrawSegment[-Triangle](B,C)
+        \tkzDrawSegment[-Triangle](A,C)
+    \end{tikzpicture}
+\end{figure}
+\paragraph{Правило параллелограма}
+$\\\\\overrightarrow{AX}=\overrightarrow{AB}+\overrightarrow{AC}$
+\begin{figure}[h!]
+    \begin{tikzpicture}        
+        \tkzDefPoint(0,0){A} \tkzDrawPoint(A) \tkzLabelPoint[left,black](A){$A$}
+        \tkzDefPoint(1,2){B} \tkzDrawPoint(B) \tkzLabelPoint[left,black](B){$B$}
+        \tkzDefPoint(3,0){C} \tkzDrawPoint(C) \tkzLabelPoint[right,black](C){$C$}
+        \tkzDefPoint(4,2){X} \tkzDrawPoint(X) \tkzLabelPoint[right,black](X){$X$}
+
+        \tkzDrawSegment[-Triangle](A,B)
+        \tkzDrawSegment[-Triangle](A,C)
+        \tkzDrawSegment[-Triangle](A,X)
+        \tkzDrawSegment[-Triangle,dashed](B,X)
+        \tkzDrawSegment[-Triangle,dashed](C,X)
+    \end{tikzpicture}
+\end{figure}
+\paragraph{Правило замкнутой ломаной|многоугольника}
+$\\\\\overrightarrow{AF}=\overrightarrow{AB}+\overrightarrow{BC}+\overrightarrow{CD}+\overrightarrow{DE}+\overrightarrow{EF}$
+\begin{figure}[h!]
+    \begin{tikzpicture}        
+        \tkzDefPoint(0,0){A} \tkzDrawPoint(A) \tkzLabelPoint[left,black](A){$A$}
+        \tkzDefPoint(-1,1){B} \tkzDrawPoint(B) \tkzLabelPoint[left,black](B){$B$}
+        \tkzDefPoint(-1,2){C} \tkzDrawPoint(C) \tkzLabelPoint[right,black](C){$C$}
+        \tkzDefPoint(0,3){D} \tkzDrawPoint(D) \tkzLabelPoint[left,black](D){$D$}
+        \tkzDefPoint(2,3){E} \tkzDrawPoint(E) \tkzLabelPoint[right,black](E){$E$}
+        \tkzDefPoint(0,2){F} \tkzDrawPoint(F) \tkzLabelPoint[left,black](F){$F$}
+
+        \tkzDrawSegment[-Triangle](A,B)
+        \tkzDrawSegment[-Triangle](B,C)
+        \tkzDrawSegment[-Triangle](C,D)
+        \tkzDrawSegment[-Triangle](D,E)
+        \tkzDrawSegment[-Triangle](E,F)
+        \tkzDrawSegment[-Triangle](A,F)
+    \end{tikzpicture}
+\end{figure}
+\subsubsection{Свойства сложения векторов}
+$\overrightarrow{a}+\overrightarrow{b}=\overrightarrow{b}+\overrightarrow{a}$
+$\\\\\overrightarrow{a}+(\overrightarrow{b}+\overrightarrow{c})=(\overrightarrow{a}+\overrightarrow{b})+\overrightarrow{c}$
+$\\\\\overrightarrow{a}+\overrightarrow{0}=\overrightarrow{0}+\overrightarrow{a}$
+$\\\\\overrightarrow{\alpha}(\overrightarrow{a}+\overrightarrow{b})=\alpha*\overrightarrow{a}+\alpha*\overrightarrow{b}$
+\subsubsection{Умножение вектора на число}
+$k*\overrightarrow{a}=\overrightarrow{b}\\$
+$k>0 => \overrightarrow{a}\uparrow\uparrow\overrightarrow{b}\\$
+$k<0 => \overrightarrow{a}\uparrow\downarrow\overrightarrow{b}\\$
+$|k|>1 => |\overrightarrow{a}|<|\overrightarrow{b}|\\$
+$0<|k|<1 => |\overrightarrow{a}|>|\overrightarrow{b}|\\$
+$k=0 => |k\overrightarrow{a}|=\overrightarrow{0}$ - нуль вектор\\
+$k=1 => |\overrightarrow{a}|=|\overrightarrow{b}|\\$
+\begin{figure}[h!]
+    \begin{tikzpicture}        
+        \tkzDefPoint(0,0){A} \tkzDrawPoint(A) \tkzLabelPoint[left,black](A){$A$}
+        \tkzDefPoint(1,2){B} \tkzDrawPoint(B) \tkzLabelPoint[left,black](B){$B$}
+        \tkzDefPoint(3,0){C} \tkzDrawPoint(C) \tkzLabelPoint[right,black](C){$C$}
+        \tkzDefPoint(5,4){D} \tkzDrawPoint(D) \tkzLabelPoint[right,black](D){$D$}
+        \tkzDefPoint(6,0){M} \tkzDrawPoint(M) \tkzLabelPoint[right,black](M){$M$}
+        \tkzDefPoint(6.5,1){K} \tkzDrawPoint(K) \tkzLabelPoint[right,black](K){$K$}
+
+        \tkzDrawSegment[-Triangle](A,B)
+        \tkzDrawSegment[-Triangle](C,D)
+        \tkzDrawSegment[-Triangle](K,M)
+
+        \tkzLabelSegment[auto](A,B){1*$\overrightarrow{AB}$}
+        \tkzLabelSegment[auto](C,D){2*$\overrightarrow{AB}$}
+        \tkzLabelSegment[auto](M,K){-$\frac{1}{2}$*$\overrightarrow{AB}$}
+    \end{tikzpicture}
+\end{figure}
+\subsubsection{Свойства умножения вектора на число}
+k(m*$\overrightarrow{a}$)=$\overrightarrow{a}$*(k*m)=m(k*$\overrightarrow{a}$)\\
+(k+m)*$\overrightarrow{a}$=k$\overrightarrow{a}$+m$\overrightarrow{a}$\\
+\subsubsection{Скалярное произведение двух векторов}
+Результат: скаляр\\
+угол между двумя векторами\\
+$\overrightarrow{a}*\overrightarrow{b}=(\overrightarrow{a},\overrightarrow{b})\\$
+\\
+$\overrightarrow{a}*\overrightarrow{b}=k\\$
+$k>0 => \overrightarrow{a}\uparrow\uparrow\overrightarrow{b}   \angle\overrightarrow{a}\overrightarrow{b}\in[0^\circ..90^\circ)\\$
+$k<0 => \overrightarrow{a}\uparrow\downarrow\overrightarrow{b}   \angle\overrightarrow{a}\overrightarrow{b}\in(90^\circ..180^\circ]\\$
+$k>0 => \overrightarrow{a}\uparrow\uparrow\overrightarrow{b}\\$
+$k=0 => \overrightarrow{a}||\overrightarrow{b}\in \overrightarrow{\alpha }\\$
+$\overrightarrow{a}*\overrightarrow{b}=|\overrightarrow{a}|*|\overrightarrow{b}|*\cos\angle(\overrightarrow{a}\overrightarrow{b})\\$
+$\cos\angle(\overrightarrow{a}\overrightarrow{b}) = \frac{\overrightarrow{a}}{|a|}*\frac{\overrightarrow{b}}{|b|}\\$
+\subsubsection{Свойства скалярного произведения двух векторов}
+$\overrightarrow{a}*\overrightarrow{b}=\overrightarrow{b}*\overrightarrow{a}\\$
+$\overrightarrow{a}*(\overrightarrow{b}*\overrightarrow{c})=\overrightarrow{a}*\overrightarrow{b}+\overrightarrow{a}*\overrightarrow{c})\\$
+$(k*\overrightarrow{a})*\overrightarrow{b}=k*(\overrightarrow{a}*\overrightarrow{b})\\$
+\subsubsection{Векторое произведение двух векторов для пространства размерности 3}
+Результат: вектор\\
+модуль результата($\overrightarrow{c}$) равен площади параллелограма натянутого на векторы $\overrightarrow{a}$ и $\overrightarrow{b}\\$
+$\overrightarrow{a}\times\overrightarrow{b}=[\overrightarrow{a}*\overrightarrow{b}]\\$
+$\overrightarrow{a}\times\overrightarrow{b}=\overrightarrow{c}$
+$\overrightarrow{c}\bot\overrightarrow{a},\overrightarrow{b}\\$
+\subsubsection{Свойства векторного произведения двух векторов}
+$\overrightarrow{a}\times\overrightarrow{b}=-\overrightarrow{b}\times\overrightarrow{a}\\$
+$(\overrightarrow{a}+\overrightarrow{b})\times\overrightarrow{c}=\overrightarrow{a}\times\overrightarrow{c}+\overrightarrow{b}\times\overrightarrow{c}\\$
+$(k*\overrightarrow{a})\times\overrightarrow{b}=k*(\overrightarrow{a}\times\overrightarrow{b})$
+\subsubsection{Псевдоскалярное произведение двух векторов}
+Результат: скаляр\\
+характеризует ориентацию угла между векторами при помощи знака\\
+$\overrightarrow{a}\vee\overrightarrow{b}=m\\$
+$\overrightarrow{a}\vee\overrightarrow{b}=|\overrightarrow{a}|*|\overrightarrow{b}|*\sin\angle(\overrightarrow{a}\overrightarrow{b})\\$
+$\sin\angle(\overrightarrow{a}\overrightarrow{b})=\frac{\overrightarrow{a}*\overrightarrow{b}}{|\overrightarrow{a}|*|\overrightarrow{b}|}\\$
+$m=0 => \angle(\overrightarrow{a},\overrightarrow{b})=(0^\circ||180^\circ) => \overrightarrow{a}||\overrightarrow{b}\\$
+\subsubsection{Свойства псевдоскалярного произведение двух векторов}
+$\overrightarrow{a}\vee\overrightarrow{b}=-\overrightarrow{b}\vee\overrightarrow{a}$
+$(\overrightarrow{a}+\overrightarrow{b})\vee\overrightarrow{c}=\overrightarrow{a}\vee\overrightarrow{c}+\overrightarrow{a}\vee\overrightarrow{b}\\$
+$(k*\overrightarrow{a})\vee\overrightarrow{b}=k*(\overrightarrow{a}\vee\overrightarrow{b})\\$
+\subsubsection{Смешаное произведение трех векторов}
+Результат: скаляр\\
+результат смешаного произведения представляет собой объем паралелепипеда натянутого на данные векторы\\ 
+$(\overrightarrow{a}*\overrightarrow{b}*\overrightarrow{c})=\overrightarrow{a}*(\overrightarrow{b}\times\overrightarrow{c})=(\overrightarrow{a}\times\overrightarrow{b})*\overrightarrow{c}\\$
+\fbox{
+    \textbf{Порядок операций:  }Сначала выполняется векторное умножение ($\times$), а только затем скалярное (*)\\
+}
+$n=0 => \overrightarrow{a}=\overrightarrow{0}||\overrightarrow{b}=\overrightarrow{0}||\overrightarrow{c}=\overrightarrow{0}\\$
+$n>0 => $Ориентация векторов такая же как в базисе $\overrightarrow{i}\overrightarrow{j}\overrightarrow{k}$\\
+$n<0 => $Ориентация векторов не такая как в базисе $\overrightarrow{i}\overrightarrow{j}\overrightarrow{k}$\\
+\subsubsection{Свойства смешаного произведения трех векторов}
+$(\overrightarrow{a}\overrightarrow{b}\overrightarrow{c})=(\overrightarrow{b}\overrightarrow{c}\overrightarrow{a})=(\overrightarrow{c}\overrightarrow{b}\overrightarrow{b})\\$
+$(\overrightarrow{a}\overrightarrow{b}\overrightarrow{c})=-(\overrightarrow{b}\overrightarrow{a}\overrightarrow{c})\\$
+$((\overrightarrow{a}+\overrightarrow{b})\overrightarrow{c}\overrightarrow{d})=(\overrightarrow{a}\overrightarrow{c}\overrightarrow{d})+(\overrightarrow{b}\overrightarrow{c}\overrightarrow{d})$
+\subsection{Взаимное расположение векторов, линейная зависимость и базис}
+\subsubsection{Взаимное расположение векторов}
+\textbf{Коллениарность} - расположение двух векторов когда они параллельны: $\overrightarrow{a}||\overrightarrow{b}$ а также $\overrightarrow{a}=k*\overrightarrow{b}$\\
+\textbf{Ортогональность} - расположение двух векторов когда они перпендикулярны: $\overrightarrow{a}\perp\overrightarrow{b}\\$
+\textbf{Компланарность} - расположение двух и более векторов когда они коллениарны(паралельны) одной плоскости или лежат в ней: $\overrightarrow{c}=k*\overrightarrow{a}+m*\overrightarrow{b}\\$
+\subsubsection{Линейная зависимость}
+\textbf{Линейная комбинация} — выражение, построенное на множестве элементов путём умножения каждого элемента на коэффициенты с последующим сложением результатов\\
+$\alpha_1\overrightarrow{a_1}+\alpha_2\overrightarrow{a_2}+\alpha_3\overrightarrow{a_3}+...+\alpha_n\overrightarrow{a_n}=\overrightarrow{0}\\$
+Линейная комбинация(Система) является линейно зависимой если хотябы 1 $\alpha\neq0$ и/или если имеется хотябы один $\overrightarrow{0}.\\$
+Если система имеет линейно зависимую подсистему, то она линейно зависима.\\\\
+Если мы не имеется ни одного 0, то система линейно не зависима и мы имеем размер векторного пространства $n = div(M)$
+\subsubsection{Базис}
+\textbf{Базис} - это упорядоченная СЛНВ (система линейно независимых векторов) в векторном пространстве.\\
+Виды базисов:
+\begin{itemize}
+    \item Ортогональный
+    \item Ортонормированый - например $(\overrightarrow{i}\overrightarrow{j}\overrightarrow{k})$
+    \item Произвольный (Афинный)
+\end{itemize}
+\fbox{Базис позволяет определить координаты вектора}
+%%TODO написать про нормировку
+\end{document}
