@@ -20,3 +20,4 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Взаимное расположение векторов}{5}{}%
 \contentsline {subsubsection}{\numberline {1.2.2}Линейная зависимость}{5}{}%
 \contentsline {subsubsection}{\numberline {1.2.3}Базис}{6}{}%
+\contentsline {subsubsection}{\numberline {1.2.4}Взаимосвязь между базисами}{6}{}%

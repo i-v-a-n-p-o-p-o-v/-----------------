@@ -215,5 +215,26 @@ $\alpha_1\overrightarrow{a_1}+\alpha_2\overrightarrow{a_2}+\alpha_3\overrightarr
     \item Произвольный (Афинный)
 \end{itemize}
 \fbox{Базис позволяет определить координаты вектора}
+\subsubsection{Взаимосвязь между базисами}
+Пусть дан базис $\beta={\overrightarrow{e_1'},\overrightarrow{e_2'},...,\overrightarrow{e_n}'}$ и базис $\beta'=\{\overrightarrow{e_1},\overrightarrow{e_2},...,\overrightarrow{e_n}\}$, где n = dim(V)\\
+Тогда координаты векторов базиса $\beta$ в базисе $\beta'$ будут представлять собой линейную комбинацию: \\
+$\overrightarrow{e_1'}=a_1^1*\overrightarrow{e_1}+a_1^2*\overrightarrow{e_2}+...a_1^n*\overrightarrow{e_n}$ из чего мы получим:\\
+$\overrightarrow{e_1'}\{a_1^1,a_1^2,...,a_1^n\}_\beta\\$
+где $a^j_i$ - координаты\\
+Формула перехода:
+\fbox{
+    %%TODO подозрительно
+    $\overrightarrow{e_j'}=a_j^i*\overrightarrow{e_i}=\sum_{j = 1}^{n}a^j_1*\overrightarrow{e}$         $j=\overline{1,n}$
+}
+\paragraph*{Пример:}
+$\overrightarrow{x} \in V^n$\\
+$\overrightarrow{x}\{x_1,x_2,...,x_n\}_\beta$ и $\{y_1,y_2,...,y_n\}_{\beta'}$\\
+$\overrightarrow{x}=y^1\overrightarrow{e_1'}+y^2\overrightarrow{e_2'}+...+y^n\overrightarrow{e_n'}=y^j\overrightarrow{e_i'}=y^1(a^i_1\overrightarrow{e_j})+y^2(a^i_2\overrightarrow{e_j})+...++y^n(a^i_n\overrightarrow{e_j}=(y^1a_1^1+y^2a_2^1+...+y^{n}a^1_n)\overrightarrow{e_1}+(y^1a_1^2+y^2a_2^2+...+y^{n}a^2_n)\overrightarrow{e_2}+...+(y^1a_1^n+y^2a_2^n+...+y^{n}a^n_n)\overrightarrow{e_n}\\$
+Из этого можно сделать вывод:
+$\overrightarrow{x}=x^1\overrightarrow{e_1}+x^2\overrightarrow{e_2}+...+x^n\overrightarrow{e_n}$, где $x^n=y^1a_1^n+y^2a_2^n+...+y^{n}a^n_n$
+\fbox{
+    $x^i=y^ja^i_j$ - формула перехода
+}
+
 %%TODO написать про нормировку
 \end{document}
