@@ -237,4 +237,67 @@ $\overrightarrow{x}=x^1\overrightarrow{e_1}+x^2\overrightarrow{e_2}+...+x^n\over
 }
 
 %%TODO написать про нормировку
+\newpage
+\section{Действия над векторами в координатной форме}
+Пусть даны векторы $\overrightarrow{x}\{x^1,x^2,...,x^n\}$ и $\overrightarrow{y}\{y^1,y^2,...,y^n\}\\$
+\subsubsection{Сложение векторов в координатной форме}
+$\overrightarrow{x}+\overrightarrow{y}=x^1\overrightarrow{x_1}+x^2\overrightarrow{x_2}+...+x^n\overrightarrow{x_n}+y^1\overrightarrow{y_1}+y^2\overrightarrow{y_2}+...+y^n\overrightarrow{y_n}=(x^1+y^1)\overrightarrow{e_1}+(x^2+y^2)\overrightarrow{e_2}+...+(x^n+y^n)\overrightarrow{e_n}=z^1\overrightarrow{e_1}+z^2\overrightarrow{e_2}+...+z^n\overrightarrow{e_n}\\$
+\fbox{$x^n+y^n=z^n$}
+\subsubsection{Умножение вектора на число}
+$\overrightarrow{p}=k\overrightarrow{x}=k(x^1\overrightarrow{e_1}+x^2\overrightarrow{e_2}+...+x^n\overrightarrow{e_n})=kx^1\overrightarrow{e_1}+kx^2\overrightarrow{e_2}+...+kx^n\overrightarrow{e_n}$
+\subsubsection{Скалярное произведение векторов}
+$\overrightarrow{x}*\overrightarrow{y}=(x^1\overrightarrow{e_1}+x^2\overrightarrow{e_2}+...+x^n\overrightarrow{e_n})*(y^1\overrightarrow{e_1}+y^2\overrightarrow{e_2}+...+y^n\overrightarrow{e_n})=(x^1y^1\overrightarrow{e_1}\overrightarrow{e_1}+x^1y^2\overrightarrow{e_1}\overrightarrow{e_2}+...+x^ny^n\overrightarrow{e_n}\overrightarrow{e_n})$<= простое раскрытие произведения скобок\\
+В частности для $V^3 \beta\{\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}\}$ - ортогонального и ортонормированного базиса:\\
+$\overrightarrow{x}*\overrightarrow{y}=(x^1\overrightarrow{i}+x^2\overrightarrow{j}+x^3\overrightarrow{k})*(y^1\overrightarrow{i}+y^2\overrightarrow{j}+y^3\overrightarrow{k})=x1y1\overrightarrow{i}^2+x^1y^2\overrightarrow{i}\overrightarrow{j}+x^1y^3\overrightarrow{i}\overrightarrow{k}+x^2y^1\overrightarrow{i}\overrightarrow{j}+x^2y^2\overrightarrow{j}^2+x^2y^3\overrightarrow{j}\overrightarrow{k}+x^3y^1\overrightarrow{i}\overrightarrow{k}+x^3y^2\overrightarrow{j}\overrightarrow{k}+x^3y^3\overrightarrow{k}^2 => x^1y^1+x^2y^2+x^3y^3\\$
+Итого:
+\fbox{В ортонормированом и ортогональном базисе $\overrightarrow{x}*\overrightarrow{y}=x^1y^1+x^2y^2+...+x^ny^n$}
+\subsection{Псевдоскалярное произведение векторов в координатной форме в двухмерном пространстве}
+$\overrightarrow{x}\{x^1,x^2\}  \overrightarrow{y}\{y^1,y^2\}\\$
+$\overrightarrow{x}, \overrightarrow{y} \in \beta\{\overrightarrow{i},\overrightarrow{j}\}\\$
+$\overrightarrow{x}\vee\overrightarrow{y}=x^1y^2-x^2y^1\\$
+$\overrightarrow{x}^2=\overrightarrow{x}*\overrightarrow{x}=(x^1)^2+(x^2)^2\\$
+\fbox{Данный вариант подходит только для пространтства размерности 2!}
+\subsection{Векторное произведение двух векторов в координатной форме в трехмерном векторном простанстве}
+$\beta\{\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}\}\\$
+$\overrightarrow{x}\times\overrightarrow{y}=$
+$\begin{vmatrix}
+    x^1 & x^2 & x^3\\
+    y^1 & y^2 & y^3\\
+    i & j & k
+\end{vmatrix}$
+$=(x^2y^3-x^3y^2)*i+(x^3y^1-x^1y^3)*j+(x^1y^2-x^2y^1)*k$
+$=\{x^2y^3-x^3y^2,x^3y^1-x^1y^3,x^1y^2-x^2y^1\}$
+\subsection{Смешаное произведение трех векторов в координатной форме в трехмерном векторном простанстве}
+$\overrightarrow{x}\{x^1,x^2,x^3\}  \overrightarrow{y}\{y^1,y^2,y^3\}  \overrightarrow{z}\{z^1,z^2,z^3\}\\$
+$(\overrightarrow{x}\overrightarrow{y}\overrightarrow{z})=(\overrightarrow{x}\times\overrightarrow{y})*\overrightarrow{z}=$
+$\begin{vmatrix}
+    x^1 & x^2 & x^3\\
+    y^1 & y^2 & y^3\\
+    z^1 & z^2 & z^3
+\end{vmatrix}$
+$=(x^2y^3-x^3y^2)*z^1+(x^3y^1-x^1y^3)*z^2+(x^1y^2-x^2y^1)*z^3=...$
+\subsection{Векторное произведение n-1 векторов в координатной форме в n-мерном векторном простанстве}
+$\beta=\{i^1,i^2,...,i^n\}, dim(V)=n\\$
+$|i^k|=1, i^k \perp i^e (e \neq k)\\$
+$\overrightarrow{y}=\overrightarrow{x_1}\times\overrightarrow{x_2}\times...\times\overrightarrow{x_{n-1}}=$
+$\begin{vmatrix}
+    x_1^1 & x_1^2 & ... & x_1^n\\
+    x_2^1 & x_2^2 & ... & x_2^n\\
+    ... & ... & ... & ...\\
+    x_{n-1}^1 & x_{n-1}^2 & ... & x_{n-1}^n\\
+    i^1 & i^2 & ... & i^n
+\end{vmatrix}$ где $\overrightarrow{x_1}\{x^j_1\}$,$\overrightarrow{x_2}\{x^j_2\}$,...,$\overrightarrow{x_{n-1}}\{x^j_{n-1}\}; j=\overline{1,n}$
+
+\subsection{Псевдоскалярное произведение n векторов в координатной форме в n-мерном векторном простанстве}
+$\beta=\{i^1,i^2,...,i^n\}, dim(V)=n\\$
+$|i^k|=1, i^k \perp i^e (e \neq k)\\$
+$\overrightarrow{y}=\overrightarrow{x_1}\vee\overrightarrow{x_2}\vee...\vee\overrightarrow{x_{n-1}}=$
+$\begin{vmatrix}
+    x_1^1 & x_1^2 & ... & x_1^n\\
+    x_2^1 & x_2^2 & ... & x_2^n\\
+    ... & ... & ... & ...\\
+    x_{n}^1 & x_{n}^2 & ... & x_{n}^n\\
+\end{vmatrix}$ где $\overrightarrow{x_1}\{x^j_1\}$,$\overrightarrow{x_2}\{x^j_2\}$,...,$\overrightarrow{x_{n-1}}\{x^j_{n-1}\}; j=\overline{1,n}$
+
+
 \end{document}

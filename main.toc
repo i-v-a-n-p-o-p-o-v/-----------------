@@ -21,3 +21,12 @@
 \contentsline {subsubsection}{\numberline {1.2.2}Линейная зависимость}{5}{}%
 \contentsline {subsubsection}{\numberline {1.2.3}Базис}{6}{}%
 \contentsline {subsubsection}{\numberline {1.2.4}Взаимосвязь между базисами}{6}{}%
+\contentsline {section}{\numberline {2}Действия над векторами в координатной форме}{7}{}%
+\contentsline {subsubsection}{\numberline {2.0.1}Сложение векторов в координатной форме}{7}{}%
+\contentsline {subsubsection}{\numberline {2.0.2}Умножение вектора на число}{7}{}%
+\contentsline {subsubsection}{\numberline {2.0.3}Скалярное произведение векторов}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Псевдоскалярное произведение векторов в координатной форме в двухмерном пространстве}{7}{}%
+\contentsline {subsection}{\numberline {2.2}Векторное произведение двух векторов в координатной форме в трехмерном векторном простанстве}{7}{}%
+\contentsline {subsection}{\numberline {2.3}Смешаное произведение трех векторов в координатной форме в трехмерном векторном простанстве}{7}{}%
+\contentsline {subsection}{\numberline {2.4}Векторное произведение n-1 векторов в координатной форме в n-мерном векторном простанстве}{8}{}%
+\contentsline {subsection}{\numberline {2.5}Псевдоскалярное произведение n векторов в координатной форме в n-мерном векторном простанстве}{8}{}%
