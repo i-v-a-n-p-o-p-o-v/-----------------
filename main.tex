@@ -1,8 +1,8 @@
 \documentclass{article}
 
-\usepackage[utf8]{inputenc}
 
 %% Russian language support
+\usepackage{cmap}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
@@ -298,6 +298,45 @@ $\begin{vmatrix}
     ... & ... & ... & ...\\
     x_{n}^1 & x_{n}^2 & ... & x_{n}^n\\
 \end{vmatrix}$ где $\overrightarrow{x_1}\{x^j_1\}$,$\overrightarrow{x_2}\{x^j_2\}$,...,$\overrightarrow{x_{n-1}}\{x^j_{n-1}\}; j=\overline{1,n}$
-
-
+\newpage
+\section{Ортогонализация и нормизация системы векторов}
+Дано:\\
+$\overrightarrow{a},\overrightarrow{b}\\$
+Цель: найти векторы $\overrightarrow{a'}$ и $\overrightarrow{b'}$, такие что их модули равны и векторы перпендикулярны.\\
+$\overrightarrow{a'},\overrightarrow{b'} : |\overrightarrow{a'}|=|\overrightarrow{b'}|=1;\overrightarrow{a'}\perp\overrightarrow{b'} \leftrightarrow \overrightarrow{a'}*\overrightarrow{b'}=0\\$
+\subsection{Для двух двухмерных векторов}
+$\overrightarrow{a}\{a^1,a^2\}, \overrightarrow{b}\{b^1,b^2\}\\$
+\paragraph*{Шаг первый}
+Определим вектор $\overrightarrow{a'}:\\$
+$\overrightarrow{a'}=\overrightarrow{a}={a^1,a^2}$
+\paragraph*{Шаг второй}
+Определим вектор $\overrightarrow{b'}:\\$
+Мы знаем что $\overrightarrow{a'}\perp\overrightarrow{b'}$, а значит мы можем воспользоваться формулой:\\
+$a'^1b'^1+a'^2b'^2=0\\$
+$a'^1\neq0 \Rightarrow b'^1=-\frac{a'^2}{a'^1}b'^2\\$
+В итоге: $\overrightarrow{b'}=\{-\frac{a^2}{a^1}b',b'\}\\$
+Как частный случай можно использовать формулу:
+\fbox{
+$\overrightarrow{b'}=\{-a'^2,a'^1\}$ или $\{a'^2,-a'^1\}\\$
+}
+\paragraph*{Шаг третий}
+Проверка ориентации:\\
+Если 
+$det
+    \begin{pmatrix}
+        {a^1} & {a^2}\\
+        {b^1} & {b^2}
+    \end{pmatrix}
+$=$det
+\begin{pmatrix}
+    {a'^1} & {a'^2}\\
+    {b'^1} & {b'^2}
+\end{pmatrix}
+$, то ориентация совпала и можно переходить к нормированию. Иначе требуется вернуться на шаг 2 и выбрать другой вариант из частного случая.
+\paragraph*{Нормирование}
+Вектор считается нормированным, если его модуль равен 1.\\
+Формула нормирования на примере вектора $\overrightarrow{a}\{a^1,a^2\}$:
+\fbox{$
+\overrightarrow{a}=\{\frac{a^1}{\sqrt{(a^1)^2+(a^2)^2}},{\frac{a^2}{\sqrt{(a^1)^2+(a^2)^2}}}\}
+$}
 \end{document}
