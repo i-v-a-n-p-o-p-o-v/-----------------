@@ -175,7 +175,7 @@ $(k*\overrightarrow{a})\times\overrightarrow{b}=k*(\overrightarrow{a}\times\over
 характеризует ориентацию угла между векторами при помощи знака\\
 $\overrightarrow{a}\vee\overrightarrow{b}=m\\$
 $\overrightarrow{a}\vee\overrightarrow{b}=|\overrightarrow{a}|*|\overrightarrow{b}|*\sin\angle(\overrightarrow{a}\overrightarrow{b})\\$
-$\sin\angle(\overrightarrow{a}\overrightarrow{b})=\frac{\overrightarrow{a}*\overrightarrow{b}}{|\overrightarrow{a}|*|\overrightarrow{b}|}\\$
+$\sin\angle(\overrightarrow{a}\overrightarrow{b})=\frac{\overrightarrow{a}\vee\overrightarrow{b}}{|\overrightarrow{a}|*|\overrightarrow{b}|}\\$
 $m=0 => \angle(\overrightarrow{a},\overrightarrow{b})=(0^\circ||180^\circ) => \overrightarrow{a}||\overrightarrow{b}\\$
 \subsubsection{Свойства псевдоскалярного произведение двух векторов}
 $\overrightarrow{a}\vee\overrightarrow{b}=-\overrightarrow{b}\vee\overrightarrow{a}$
@@ -202,8 +202,8 @@ $((\overrightarrow{a}+\overrightarrow{b})\overrightarrow{c}\overrightarrow{d})=(
 \textbf{Компланарность} - расположение двух и более векторов когда они коллениарны(паралельны) одной плоскости или лежат в ней: $\overrightarrow{c}=k*\overrightarrow{a}+m*\overrightarrow{b}\\$
 \subsubsection{Линейная зависимость}
 \textbf{Линейная комбинация} — выражение, построенное на множестве элементов путём умножения каждого элемента на коэффициенты с последующим сложением результатов\\
-$\alpha_1\overrightarrow{a_1}+\alpha_2\overrightarrow{a_2}+\alpha_3\overrightarrow{a_3}+...+\alpha_n\overrightarrow{a_n}=\overrightarrow{0}\\$
-Линейная комбинация(Система) является линейно зависимой если хотябы 1 $\alpha\neq0$ и/или если имеется хотябы один $\overrightarrow{0}.\\$
+$\lambda_1\overrightarrow{a_1}+\lambda\overrightarrow{a_2}+\lambda\overrightarrow{a_3}+...+\lambda\overrightarrow{a_n}=\overrightarrow{0}\\$
+Линейная комбинация(Система) является линейно зависимой если хотябы 1 $\lambda\neq0$ и/или если имеется хотябы один $\overrightarrow{0}.\\$
 Если система имеет линейно зависимую подсистему, то она линейно зависима.\\\\
 Если мы не имеется ни одного 0, то система линейно не зависима и мы имеем размер векторного пространства $n = div(M)$
 \subsubsection{Базис}
@@ -263,9 +263,9 @@ $\overrightarrow{x}\times\overrightarrow{y}=$
 $\begin{vmatrix}
     x^1 & x^2 & x^3\\
     y^1 & y^2 & y^3\\
-    i & j & k
+    \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k}
 \end{vmatrix}$
-$=(x^2y^3-x^3y^2)*i+(x^3y^1-x^1y^3)*j+(x^1y^2-x^2y^1)*k$
+$=(x^2y^3-x^3y^2)*\overrightarrow{i}+(x^3y^1-x^1y^3)*\overrightarrow{j}+(x^1y^2-x^2y^1)*\overrightarrow{k}$
 $=\{x^2y^3-x^3y^2,x^3y^1-x^1y^3,x^1y^2-x^2y^1\}$
 \subsection{Смешаное произведение трех векторов в координатной форме в трехмерном векторном простанстве}
 $\overrightarrow{x}\{x^1,x^2,x^3\}  \overrightarrow{y}\{y^1,y^2,y^3\}  \overrightarrow{z}\{z^1,z^2,z^3\}\\$
@@ -327,16 +327,76 @@ $det
         {a^1} & {a^2}\\
         {b^1} & {b^2}
     \end{pmatrix}
-$=$det
+$ и $det
 \begin{pmatrix}
     {a'^1} & {a'^2}\\
     {b'^1} & {b'^2}
 \end{pmatrix}
-$, то ориентация совпала и можно переходить к нормированию. Иначе требуется вернуться на шаг 2 и выбрать другой вариант из частного случая.
+$ имеют одинаковый знак, то ориентация совпала и можно переходить к нормированию. Иначе требуется вернуться на шаг 2 и выбрать другой вариант из частного случая.
 \paragraph*{Нормирование}
 Вектор считается нормированным, если его модуль равен 1.\\
 Формула нормирования на примере вектора $\overrightarrow{a}\{a^1,a^2\}$:
-\fbox{$
-\overrightarrow{a}=\{\frac{a^1}{\sqrt{(a^1)^2+(a^2)^2}},{\frac{a^2}{\sqrt{(a^1)^2+(a^2)^2}}}\}
-$}
+\fbox{$\overrightarrow{a}=\{\frac{a^1}{\sqrt{(a^1)^2+(a^2)^2}},{\frac{a^2}{\sqrt{(a^1)^2+(a^2)^2}}}\}$}
+\subsection{Для двух трехмерных векторов}
+$\overrightarrow{a}\{a^1,a^2,a^3\}\\$
+$\overrightarrow{b}\{b^1,b^2,b^3\}\\$
+$\overrightarrow{a},\overrightarrow{b} \in V^3\\$
+\paragraph*{Шаг 1}
+Получим вектор $\overrightarrow{a'}$\\
+$\overrightarrow{a'}=\overrightarrow{a}=\{a^1,a^2,a^3\}\\$
+$\overrightarrow{a'}\perp\overrightarrow{b'}\\$
+\paragraph*{Шаг 2}
+Получим вектор $\overrightarrow{b'}$\\
+Вектор $\overrightarrow{b'}$ является линейно зависимым для векторов $\overrightarrow{a}$ и $\overrightarrow{b}$, а значит его можно получить следующим способом:\\
+$\overrightarrow{b'}=m\overrightarrow{a}+k\overrightarrow{b}={ka^1,ka^2,ka^3}+{mb^1,mb^2,mb^3}={ka^1+mb^1,ka^2+mb^2,ka^3+mb^3}\\$
+Так как $\overrightarrow{a}\perp\overrightarrow{b'}$, то косинус угла между ними равен нулю, а значит $\overrightarrow{a}*\overrightarrow{b'}=0$\\
+Следовательно: $a^1(ka^1+mb^1)+a^2(ka^2+mb^2)+a^3(ka^3+mb^3)=0\\$
+Спустя несколько преобразований мы получим $k((a^1)^2+(a^2)^2+(a^3)^2)+m(a^1b^1+a^2b^2+a^3b^3)=0\\$\\
+РЕШИМ УРАВНЕНИЕ\\
+\textbf{Вариант 1}\\
+$m=(a^1)^2+(a^2)^2+(a^3)^2\\$
+$k=-(a^1b^1+a^2b^2+a^3b^3)\\$
+\textbf{Вариант 2}\\
+$m=-((a^1)^2+(a^2)^2+(a^3)^2)\\$
+$k=(a^1b^1+a^2b^2+a^3b^3)\\$
+\\
+Заменим m и n в формуле вектора $\overrightarrow{b'}$ на полученые значения.
+\paragraph*{Шаг 3}
+Проверим ориентацию:
+Получим векторы
+$\overrightarrow{c}=\overrightarrow{a}\times\overrightarrow{b}\\$
+$\overrightarrow{c'}=\overrightarrow{a'}\times\overrightarrow{b'}\\$
+Проверим их коллениарность при помощи векторного произведения:\\
+Если $\overrightarrow{c}\times\overrightarrow{c'}=0\\$, то переходим далее, иначе ищем ошибку в вычислениях.\\
+Проверим соонаправленность векторов:
+$\lambda=\frac{\overrightarrow{c}}{\overrightarrow{c'}}=\frac{c^1}{c'^1}=\frac{c^2}{c'^2}=\frac{c^3}{c'^3}\\$
+Если $\lambda > 0$, тогда переходим к нормированию, иначе повторим попытку используя другой вариант из шага 2.\\
+\paragraph*{Нормирование}
+Формула нормирования на примере вектора $\overrightarrow{a}\{a^1,a^2,a^3\}$:\\
+\fbox{$\overrightarrow{a}=\{\frac{a^1}{\sqrt{(a^1)^2+(a^2)^2+(a^3)^2}},{\frac{a^2}{\sqrt{(a^1)^2+(a^2)^2+(a^3)^2}}},{\frac{a^3}{\sqrt{(a^1)^2+(a^2)^2+(a^3)^2}}}\}$}
+\subsection{Для трех трехмерных векторов}
+$\overrightarrow{a}\{a^1,a^2,a^3\}\\$
+$\overrightarrow{b}\{b^1,b^2,b^3\}\\$
+$\overrightarrow{c}\{c^1,c^2,c^3\}\\$
+$\overrightarrow{a}\perp\overrightarrow{b}\perp\overrightarrow{c}\\$
+$\overrightarrow{b'}\perp\overrightarrow{c'}\\$\\
+\paragraph*{Получим векторы $\overrightarrow{a'}$ и $\overrightarrow{b'}\\$}
+$\overrightarrow{a'}=\overrightarrow{a}$\\
+$\overrightarrow{b'}$ получаем из варианта \textbf{для двух трехмерных векторов}.\\
+$\overrightarrow{c'}=\overrightarrow{a'}\times\overrightarrow{b'}$
+\paragraph*{Проверим ориентацию:\\}
+$\Delta1=\begin{vmatrix}
+    a^1 & a^2 & a^3\\
+    b^1 & b^2 & b^3\\
+    c^1 & c^2 & c^3
+\end{vmatrix}
+$
+$\Delta2=\begin{vmatrix}
+    a'^1 & a'^2 & a'^3\\
+    b'^1 & b'^2 & b'^3\\
+    c'^1 & c'^2 & c'^3
+\end{vmatrix}
+\\$
+Если $\Delta1$ и $\Delta2$ имеют одинаковый знак, то с ориентацией все хорошо и стоит переходить к нормированию.
+\newline
 \end{document}
