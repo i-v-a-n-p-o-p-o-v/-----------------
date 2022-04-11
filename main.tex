@@ -17,6 +17,8 @@
 %% Hyphenation rules
 \usepackage{hyphenat}
 
+\usepackage[hidelinks]{hyperref}
+
 %%colorfull
 \usepackage{xcolor}
 
@@ -398,5 +400,64 @@ $\Delta2=\begin{vmatrix}
 \end{vmatrix}
 \\$
 Если $\Delta1$ и $\Delta2$ имеют одинаковый знак, то с ориентацией все хорошо и стоит переходить к нормированию.
-\newline
+\newpage
+\section{Кординатные системы\newlineВиды и связь между ними}
+\subsection{Декартова прямоугольная координатная система}
+$V^2\ \ \ \ \ \ \ \ \beta=\{\overrightarrow{e^1},\overrightarrow{e^2}\}\\$
+Координаты в декартовой системе - произведение числа на базисный вектор. К примеру координаты некоторого вектора $\overrightarrow{a} \in \beta$ будут выглядеть как:\\
+$\overrightarrow{a}=\{a^1*\overrightarrow{e^1},a^2*\overrightarrow{e^2}\}$\\
+Обычно мы не замечаем $\overrightarrow{e^i}$, так как мы в большинстве случаев работаем в ортонормированном базисе где они равны единице.
+\begin{figure}[h!]
+    \begin{tikzpicture}        
+        \tkzDefPoint(-0.5,0){A} 
+        \tkzDefPoint(1,0){B} \tkzDrawPoint(B) \tkzLabelPoint[right,black](B){$x$}
+        \tkzDefPoint(0,-0.5){C} 
+        \tkzDefPoint(0,1){D} \tkzDrawPoint(D) \tkzLabelPoint[left,black](D){$y$}
+        \tkzDrawSegment[-Triangle](A,B)
+        \tkzDrawSegment[-Triangle](C,D)
+    \end{tikzpicture}
+\end{figure}
+\subsection{Афинная координатная система}
+%%ПЕРЕРЫВ ДО ПОЯНЕНИЙ
+\newpage
+\section{Деление отрезка на части}
+\subsection{На две равные части}
+Дано:\\
+M(x,y)\ \ \ \ \ \ \ N($\eta,\nu$)\\
+|MS|=|SN|\\
+Цель: найти координаты точки S\\
+\fbox{
+Расстояние между точками: $\rho=\sqrt{(\eta-\lambda)^2+(\nu-\mu)^2}\\$
+}
+$\overline{MS}=\frac{1}{2}\overline{MN}\\$
+$\{s^1-\lambda;s^2-\mu\}=\frac{1}{2}\{\eta-\lambda,\nu-\mu\}\\$
+\begin{equation}
+    \begin{cases}
+      s^1=\lambda+\frac{1}{2}(\eta-\lambda)\\
+      s^2=\mu+\frac{1}{2}(\nu-\mu)
+    \end{cases}
+\Leftrightarrow
+    \begin{cases}
+        s^1=\frac{1}{2}(\eta+\lambda)\\
+        s^2=\frac{1}{2}(\nu+\mu)
+      \end{cases}
+\end{equation}\\
+Итого координаты точки:
+\fbox{$S(\frac{\eta+\lambda}{2},\frac{\nu+\mu}{2})$}
+\subsection{На две произвольные части}
+Дано:\\
+M(x,y)\ \ \ \ \ \ \ N($\eta,\nu$)\\
+Цель: найти координаты точки S\\
+\paragraph{$\overline{MS}:\overline{MN}=\frac{m}{n}\\$}
+\begin{equation}
+    \centering
+    \begin{cases}
+      s^1=\lambda+\frac{m}{m+n}(\eta-\lambda)\\
+      s^2=\mu+\frac{m}{m+n}(\nu-\mu)
+    \end{cases}
+\end{equation}\\
+\fbox{$S(\frac{m\eta+n\lambda}{m+n},\frac{m\nu+n\mu}{m+n})$}
+\paragraph{$\overline{MS}:\overline{MN}=k\\$}
+\fbox{$S(\frac{k\eta+\lambda}{k+1},\frac{k\nu+\mu}{k+1})$}\\
+\fbox{Отрицательный результат означает что такая точка находится вне отрезка\\}
 \end{document}
