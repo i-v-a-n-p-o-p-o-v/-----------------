@@ -1,5 +1,4 @@
-\documentclass{article}
-
+\documentclass{book}
 
 %% Russian language support
 \usepackage{cmap}
@@ -13,6 +12,7 @@
 \usepackage{tkz-euclide}
 \usepackage{subcaption}
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 %% Hyphenation rules
 \usepackage{hyphenat}
@@ -41,11 +41,10 @@
 
 \newpage
 
-\section{Векторная алгебра}
+\chapter{Векторная алгебра}
 \textbf{Направленный отрезок} - отрезок с указаным направлением. Направление задается при помощи точки начала и точки конца.\\
 \begin{figure}[h!]
     \centering
-
     \begin{tikzpicture}        
         \tkzDefPoint(0,0){A} \tkzDrawPoint(A) \tkzLabelPoint[left,black](A){$A$}
         \tkzDefPoint(2,1){B} \tkzDrawPoint(B) \tkzLabelPoint[right,black](B){$B$}
@@ -61,9 +60,9 @@ $\overline{AB} \in \overrightarrow{a}$ - направленный отрезок
 }
 \\
 Совокупность напраленых отрезков является \textbf{вектором}.
-\subsection{Действия над векторами и их свойства(Аксиомпатика Вейля)}
+\section{Действия над векторами и их свойства(Аксиомпатика Вейля)}
 %%TODO добавить аксиоматику вейля
-\subsubsection{Сложение векторов}
+\subsection{Сложение векторов}
 \paragraph{Правило треугольника}
 $\\\\\overrightarrow{AC}=\overrightarrow{AB}+\overrightarrow{BC}$
 \begin{figure}[h!]
@@ -112,12 +111,12 @@ $\\\\\overrightarrow{AF}=\overrightarrow{AB}+\overrightarrow{BC}+\overrightarrow
         \tkzDrawSegment[-Triangle](A,F)
     \end{tikzpicture}
 \end{figure}
-\subsubsection{Свойства сложения векторов}
+\subsection{Свойства сложения векторов}
 $\overrightarrow{a}+\overrightarrow{b}=\overrightarrow{b}+\overrightarrow{a}$
 $\\\\\overrightarrow{a}+(\overrightarrow{b}+\overrightarrow{c})=(\overrightarrow{a}+\overrightarrow{b})+\overrightarrow{c}$
 $\\\\\overrightarrow{a}+\overrightarrow{0}=\overrightarrow{0}+\overrightarrow{a}$
 $\\\\\overrightarrow{\alpha}(\overrightarrow{a}+\overrightarrow{b})=\alpha*\overrightarrow{a}+\alpha*\overrightarrow{b}$
-\subsubsection{Умножение вектора на число}
+\subsection{Умножение вектора на число}
 $k*\overrightarrow{a}=\overrightarrow{b}\\$
 $k>0 => \overrightarrow{a}\uparrow\uparrow\overrightarrow{b}\\$
 $k<0 => \overrightarrow{a}\uparrow\downarrow\overrightarrow{b}\\$
@@ -143,10 +142,10 @@ $k=1 => |\overrightarrow{a}|=|\overrightarrow{b}|\\$
         \tkzLabelSegment[auto](M,K){-$\frac{1}{2}$*$\overrightarrow{AB}$}
     \end{tikzpicture}
 \end{figure}
-\subsubsection{Свойства умножения вектора на число}
+\subsection{Свойства умножения вектора на число}
 k(m*$\overrightarrow{a}$)=$\overrightarrow{a}$*(k*m)=m(k*$\overrightarrow{a}$)\\
 (k+m)*$\overrightarrow{a}$=k$\overrightarrow{a}$+m$\overrightarrow{a}$\\
-\subsubsection{Скалярное произведение двух векторов}
+\subsection{Скалярное произведение двух векторов}
 Результат: скаляр\\
 угол между двумя векторами\\
 $\overrightarrow{a}*\overrightarrow{b}=(\overrightarrow{a},\overrightarrow{b})\\$
@@ -158,32 +157,32 @@ $k>0 => \overrightarrow{a}\uparrow\uparrow\overrightarrow{b}\\$
 $k=0 => \overrightarrow{a}||\overrightarrow{b}\in \overrightarrow{\alpha }\\$
 $\overrightarrow{a}*\overrightarrow{b}=|\overrightarrow{a}|*|\overrightarrow{b}|*\cos\angle(\overrightarrow{a}\overrightarrow{b})\\$
 $\cos\angle(\overrightarrow{a}\overrightarrow{b}) = \frac{\overrightarrow{a}}{|a|}*\frac{\overrightarrow{b}}{|b|}\\$
-\subsubsection{Свойства скалярного произведения двух векторов}
+\subsection{Свойства скалярного произведения двух векторов}
 $\overrightarrow{a}*\overrightarrow{b}=\overrightarrow{b}*\overrightarrow{a}\\$
 $\overrightarrow{a}*(\overrightarrow{b}*\overrightarrow{c})=\overrightarrow{a}*\overrightarrow{b}+\overrightarrow{a}*\overrightarrow{c})\\$
 $(k*\overrightarrow{a})*\overrightarrow{b}=k*(\overrightarrow{a}*\overrightarrow{b})\\$
-\subsubsection{Векторое произведение двух векторов для пространства размерности 3}
+\subsection{Векторое произведение двух векторов для пространства размерности 3}
 Результат: вектор\\
 модуль результата($\overrightarrow{c}$) равен площади параллелограма натянутого на векторы $\overrightarrow{a}$ и $\overrightarrow{b}\\$
 $\overrightarrow{a}\times\overrightarrow{b}=[\overrightarrow{a}*\overrightarrow{b}]\\$
 $\overrightarrow{a}\times\overrightarrow{b}=\overrightarrow{c}$
 $\overrightarrow{c}\bot\overrightarrow{a},\overrightarrow{b}\\$
-\subsubsection{Свойства векторного произведения двух векторов}
+\subsection{Свойства векторного произведения двух векторов}
 $\overrightarrow{a}\times\overrightarrow{b}=-\overrightarrow{b}\times\overrightarrow{a}\\$
 $(\overrightarrow{a}+\overrightarrow{b})\times\overrightarrow{c}=\overrightarrow{a}\times\overrightarrow{c}+\overrightarrow{b}\times\overrightarrow{c}\\$
 $(k*\overrightarrow{a})\times\overrightarrow{b}=k*(\overrightarrow{a}\times\overrightarrow{b})$
-\subsubsection{Псевдоскалярное произведение двух векторов}
+\subsection{Псевдоскалярное произведение двух векторов}
 Результат: скаляр\\
 характеризует ориентацию угла между векторами при помощи знака\\
 $\overrightarrow{a}\vee\overrightarrow{b}=m\\$
 $\overrightarrow{a}\vee\overrightarrow{b}=|\overrightarrow{a}|*|\overrightarrow{b}|*\sin\angle(\overrightarrow{a}\overrightarrow{b})\\$
 $\sin\angle(\overrightarrow{a}\overrightarrow{b})=\frac{\overrightarrow{a}\vee\overrightarrow{b}}{|\overrightarrow{a}|*|\overrightarrow{b}|}\\$
 $m=0 => \angle(\overrightarrow{a},\overrightarrow{b})=(0^\circ||180^\circ) => \overrightarrow{a}||\overrightarrow{b}\\$
-\subsubsection{Свойства псевдоскалярного произведение двух векторов}
+\subsection{Свойства псевдоскалярного произведение двух векторов}
 $\overrightarrow{a}\vee\overrightarrow{b}=-\overrightarrow{b}\vee\overrightarrow{a}$
 $(\overrightarrow{a}+\overrightarrow{b})\vee\overrightarrow{c}=\overrightarrow{a}\vee\overrightarrow{c}+\overrightarrow{a}\vee\overrightarrow{b}\\$
 $(k*\overrightarrow{a})\vee\overrightarrow{b}=k*(\overrightarrow{a}\vee\overrightarrow{b})\\$
-\subsubsection{Смешаное произведение трех векторов}
+\subsection{Смешаное произведение трех векторов}
 Результат: скаляр\\
 результат смешаного произведения представляет собой объем паралелепипеда натянутого на данные векторы\\ 
 $(\overrightarrow{a}*\overrightarrow{b}*\overrightarrow{c})=\overrightarrow{a}*(\overrightarrow{b}\times\overrightarrow{c})=(\overrightarrow{a}\times\overrightarrow{b})*\overrightarrow{c}\\$
@@ -193,22 +192,22 @@ $(\overrightarrow{a}*\overrightarrow{b}*\overrightarrow{c})=\overrightarrow{a}*(
 $n=0 => \overrightarrow{a}=\overrightarrow{0}||\overrightarrow{b}=\overrightarrow{0}||\overrightarrow{c}=\overrightarrow{0}\\$
 $n>0 => $Ориентация векторов такая же как в базисе $\overrightarrow{i}\overrightarrow{j}\overrightarrow{k}$\\
 $n<0 => $Ориентация векторов не такая как в базисе $\overrightarrow{i}\overrightarrow{j}\overrightarrow{k}$\\
-\subsubsection{Свойства смешаного произведения трех векторов}
+\subsection{Свойства смешаного произведения трех векторов}
 $(\overrightarrow{a}\overrightarrow{b}\overrightarrow{c})=(\overrightarrow{b}\overrightarrow{c}\overrightarrow{a})=(\overrightarrow{c}\overrightarrow{b}\overrightarrow{b})\\$
 $(\overrightarrow{a}\overrightarrow{b}\overrightarrow{c})=-(\overrightarrow{b}\overrightarrow{a}\overrightarrow{c})\\$
 $((\overrightarrow{a}+\overrightarrow{b})\overrightarrow{c}\overrightarrow{d})=(\overrightarrow{a}\overrightarrow{c}\overrightarrow{d})+(\overrightarrow{b}\overrightarrow{c}\overrightarrow{d})$
-\subsection{Взаимное расположение векторов, линейная зависимость и базис}
-\subsubsection{Взаимное расположение векторов}
+\section{Взаимное расположение векторов, линейная зависимость и базис}
+\subsection{Взаимное расположение векторов}
 \textbf{Коллениарность} - расположение двух векторов когда они параллельны: $\overrightarrow{a}||\overrightarrow{b}$ а также $\overrightarrow{a}=k*\overrightarrow{b}$\\
 \textbf{Ортогональность} - расположение двух векторов когда они перпендикулярны: $\overrightarrow{a}\perp\overrightarrow{b}\\$
 \textbf{Компланарность} - расположение двух и более векторов когда они коллениарны(паралельны) одной плоскости или лежат в ней: $\overrightarrow{c}=k*\overrightarrow{a}+m*\overrightarrow{b}\\$
-\subsubsection{Линейная зависимость}
+\subsection{Линейная зависимость}
 \textbf{Линейная комбинация} — выражение, построенное на множестве элементов путём умножения каждого элемента на коэффициенты с последующим сложением результатов\\
 $\lambda_1\overrightarrow{a_1}+\lambda\overrightarrow{a_2}+\lambda\overrightarrow{a_3}+...+\lambda\overrightarrow{a_n}=\overrightarrow{0}\\$
 Линейная комбинация(Система) является линейно зависимой если хотябы 1 $\lambda\neq0$ и/или если имеется хотябы один $\overrightarrow{0}.\\$
 Если система имеет линейно зависимую подсистему, то она линейно зависима.\\\\
 Если мы не имеется ни одного 0, то система линейно не зависима и мы имеем размер векторного пространства $n = div(M)$
-\subsubsection{Базис}
+\subsection{Базис}
 \textbf{Базис} - это упорядоченная СЛНВ (система линейно независимых векторов) в векторном пространстве.\\
 Виды базисов:
 \begin{itemize}
@@ -217,7 +216,7 @@ $\lambda_1\overrightarrow{a_1}+\lambda\overrightarrow{a_2}+\lambda\overrightarro
     \item Произвольный (Афинный)
 \end{itemize}
 \fbox{Базис позволяет определить координаты вектора}
-\subsubsection{Взаимосвязь между базисами}
+\subsection{Взаимосвязь между базисами}
 Пусть дан базис $\beta={\overrightarrow{e_1'},\overrightarrow{e_2'},...,\overrightarrow{e_n}'}$ и базис $\beta'=\{\overrightarrow{e_1},\overrightarrow{e_2},...,\overrightarrow{e_n}\}$, где n = dim(V)\\
 Тогда координаты векторов базиса $\beta$ в базисе $\beta'$ будут представлять собой линейную комбинацию: \\
 $\overrightarrow{e_1'}=a_1^1*\overrightarrow{e_1}+a_1^2*\overrightarrow{e_2}+...a_1^n*\overrightarrow{e_n}$ из чего мы получим:\\
@@ -240,26 +239,26 @@ $\overrightarrow{x}=x^1\overrightarrow{e_1}+x^2\overrightarrow{e_2}+...+x^n\over
 
 %%TODO написать про нормировку
 \newpage
-\section{Действия над векторами в координатной форме}
+\chapter{Действия над векторами в координатной форме}
 Пусть даны векторы $\overrightarrow{x}\{x^1,x^2,...,x^n\}$ и $\overrightarrow{y}\{y^1,y^2,...,y^n\}\\$
-\subsubsection{Сложение векторов в координатной форме}
+\subsection{Сложение векторов в координатной форме}
 $\overrightarrow{x}+\overrightarrow{y}=x^1\overrightarrow{x_1}+x^2\overrightarrow{x_2}+...+x^n\overrightarrow{x_n}+y^1\overrightarrow{y_1}+y^2\overrightarrow{y_2}+...+y^n\overrightarrow{y_n}=(x^1+y^1)\overrightarrow{e_1}+(x^2+y^2)\overrightarrow{e_2}+...+(x^n+y^n)\overrightarrow{e_n}=z^1\overrightarrow{e_1}+z^2\overrightarrow{e_2}+...+z^n\overrightarrow{e_n}\\$
 \fbox{$x^n+y^n=z^n$}
-\subsubsection{Умножение вектора на число}
+\subsection{Умножение вектора на число}
 $\overrightarrow{p}=k\overrightarrow{x}=k(x^1\overrightarrow{e_1}+x^2\overrightarrow{e_2}+...+x^n\overrightarrow{e_n})=kx^1\overrightarrow{e_1}+kx^2\overrightarrow{e_2}+...+kx^n\overrightarrow{e_n}$
-\subsubsection{Скалярное произведение векторов}
+\subsection{Скалярное произведение векторов}
 $\overrightarrow{x}*\overrightarrow{y}=(x^1\overrightarrow{e_1}+x^2\overrightarrow{e_2}+...+x^n\overrightarrow{e_n})*(y^1\overrightarrow{e_1}+y^2\overrightarrow{e_2}+...+y^n\overrightarrow{e_n})=(x^1y^1\overrightarrow{e_1}\overrightarrow{e_1}+x^1y^2\overrightarrow{e_1}\overrightarrow{e_2}+...+x^ny^n\overrightarrow{e_n}\overrightarrow{e_n})$<= простое раскрытие произведения скобок\\
 В частности для $V^3 \beta\{\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}\}$ - ортогонального и ортонормированного базиса:\\
 $\overrightarrow{x}*\overrightarrow{y}=(x^1\overrightarrow{i}+x^2\overrightarrow{j}+x^3\overrightarrow{k})*(y^1\overrightarrow{i}+y^2\overrightarrow{j}+y^3\overrightarrow{k})=x1y1\overrightarrow{i}^2+x^1y^2\overrightarrow{i}\overrightarrow{j}+x^1y^3\overrightarrow{i}\overrightarrow{k}+x^2y^1\overrightarrow{i}\overrightarrow{j}+x^2y^2\overrightarrow{j}^2+x^2y^3\overrightarrow{j}\overrightarrow{k}+x^3y^1\overrightarrow{i}\overrightarrow{k}+x^3y^2\overrightarrow{j}\overrightarrow{k}+x^3y^3\overrightarrow{k}^2 => x^1y^1+x^2y^2+x^3y^3\\$
 Итого:
 \fbox{В ортонормированом и ортогональном базисе $\overrightarrow{x}*\overrightarrow{y}=x^1y^1+x^2y^2+...+x^ny^n$}
-\subsection{Псевдоскалярное произведение векторов в координатной форме в двухмерном пространстве}
+\section{Псевдоскалярное произведение векторов в координатной форме в двухмерном пространстве}
 $\overrightarrow{x}\{x^1,x^2\}  \overrightarrow{y}\{y^1,y^2\}\\$
 $\overrightarrow{x}, \overrightarrow{y} \in \beta\{\overrightarrow{i},\overrightarrow{j}\}\\$
 $\overrightarrow{x}\vee\overrightarrow{y}=x^1y^2-x^2y^1\\$
 $\overrightarrow{x}^2=\overrightarrow{x}*\overrightarrow{x}=(x^1)^2+(x^2)^2\\$
 \fbox{Данный вариант подходит только для пространтства размерности 2!}
-\subsection{Векторное произведение двух векторов в координатной форме в трехмерном векторном простанстве}
+\section{Векторное произведение двух векторов в координатной форме в трехмерном векторном простанстве}
 $\beta\{\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}\}\\$
 $\overrightarrow{x}\times\overrightarrow{y}=$
 $\begin{vmatrix}
@@ -269,7 +268,7 @@ $\begin{vmatrix}
 \end{vmatrix}$
 $=(x^2y^3-x^3y^2)*\overrightarrow{i}+(x^3y^1-x^1y^3)*\overrightarrow{j}+(x^1y^2-x^2y^1)*\overrightarrow{k}$
 $=\{x^2y^3-x^3y^2,x^3y^1-x^1y^3,x^1y^2-x^2y^1\}$
-\subsection{Смешаное произведение трех векторов в координатной форме в трехмерном векторном простанстве}
+\section{Смешаное произведение трех векторов в координатной форме в трехмерном векторном простанстве}
 $\overrightarrow{x}\{x^1,x^2,x^3\}  \overrightarrow{y}\{y^1,y^2,y^3\}  \overrightarrow{z}\{z^1,z^2,z^3\}\\$
 $(\overrightarrow{x}\overrightarrow{y}\overrightarrow{z})=(\overrightarrow{x}\times\overrightarrow{y})*\overrightarrow{z}=$
 $\begin{vmatrix}
@@ -278,7 +277,7 @@ $\begin{vmatrix}
     z^1 & z^2 & z^3
 \end{vmatrix}$
 $=(x^2y^3-x^3y^2)*z^1+(x^3y^1-x^1y^3)*z^2+(x^1y^2-x^2y^1)*z^3=...$
-\subsection{Векторное произведение n-1 векторов в координатной форме в n-мерном векторном простанстве}
+\section{Векторное произведение n-1 векторов в координатной форме в n-мерном векторном простанстве}
 $\beta=\{i^1,i^2,...,i^n\}, dim(V)=n\\$
 $|i^k|=1, i^k \perp i^e (e \neq k)\\$
 $\overrightarrow{y}=\overrightarrow{x_1}\times\overrightarrow{x_2}\times...\times\overrightarrow{x_{n-1}}=$
@@ -290,7 +289,7 @@ $\begin{vmatrix}
     i^1 & i^2 & ... & i^n
 \end{vmatrix}$ где $\overrightarrow{x_1}\{x^j_1\}$,$\overrightarrow{x_2}\{x^j_2\}$,...,$\overrightarrow{x_{n-1}}\{x^j_{n-1}\}; j=\overline{1,n}$
 
-\subsection{Псевдоскалярное произведение n векторов в координатной форме в n-мерном векторном простанстве}
+\section{Псевдоскалярное произведение n векторов в координатной форме в n-мерном векторном простанстве}
 $\beta=\{i^1,i^2,...,i^n\}, dim(V)=n\\$
 $|i^k|=1, i^k \perp i^e (e \neq k)\\$
 $\overrightarrow{y}=\overrightarrow{x_1}\vee\overrightarrow{x_2}\vee...\vee\overrightarrow{x_{n-1}}=$
@@ -301,12 +300,12 @@ $\begin{vmatrix}
     x_{n}^1 & x_{n}^2 & ... & x_{n}^n\\
 \end{vmatrix}$ где $\overrightarrow{x_1}\{x^j_1\}$,$\overrightarrow{x_2}\{x^j_2\}$,...,$\overrightarrow{x_{n-1}}\{x^j_{n-1}\}; j=\overline{1,n}$
 \newpage
-\section{Ортогонализация и нормизация системы векторов}
+\chapter{Ортогонализация и нормизация системы векторов}
 Дано:\\
 $\overrightarrow{a},\overrightarrow{b}\\$
 Цель: найти векторы $\overrightarrow{a'}$ и $\overrightarrow{b'}$, такие что их модули равны и векторы перпендикулярны.\\
 $\overrightarrow{a'},\overrightarrow{b'} : |\overrightarrow{a'}|=|\overrightarrow{b'}|=1;\overrightarrow{a'}\perp\overrightarrow{b'} \leftrightarrow \overrightarrow{a'}*\overrightarrow{b'}=0\\$
-\subsection{Для двух двухмерных векторов}
+\section{Для двух двухмерных векторов}
 $\overrightarrow{a}\{a^1,a^2\}, \overrightarrow{b}\{b^1,b^2\}\\$
 \paragraph*{Шаг первый}
 Определим вектор $\overrightarrow{a'}:\\$
@@ -339,7 +338,7 @@ $ имеют одинаковый знак, то ориентация совпа
 Вектор считается нормированным, если его модуль равен 1.\\
 Формула нормирования на примере вектора $\overrightarrow{a}\{a^1,a^2\}$:
 \fbox{$\overrightarrow{a}=\{\frac{a^1}{\sqrt{(a^1)^2+(a^2)^2}},{\frac{a^2}{\sqrt{(a^1)^2+(a^2)^2}}}\}$}
-\subsection{Для двух трехмерных векторов}
+\section{Для двух трехмерных векторов}
 $\overrightarrow{a}\{a^1,a^2,a^3\}\\$
 $\overrightarrow{b}\{b^1,b^2,b^3\}\\$
 $\overrightarrow{a},\overrightarrow{b} \in V^3\\$
@@ -376,7 +375,7 @@ $\lambda=\frac{\overrightarrow{c}}{\overrightarrow{c'}}=\frac{c^1}{c'^1}=\frac{c
 \paragraph*{Нормирование}
 Формула нормирования на примере вектора $\overrightarrow{a}\{a^1,a^2,a^3\}$:\\
 \fbox{$\overrightarrow{a}=\{\frac{a^1}{\sqrt{(a^1)^2+(a^2)^2+(a^3)^2}},{\frac{a^2}{\sqrt{(a^1)^2+(a^2)^2+(a^3)^2}}},{\frac{a^3}{\sqrt{(a^1)^2+(a^2)^2+(a^3)^2}}}\}$}
-\subsection{Для трех трехмерных векторов}
+\section{Для трех трехмерных векторов}
 $\overrightarrow{a}\{a^1,a^2,a^3\}\\$
 $\overrightarrow{b}\{b^1,b^2,b^3\}\\$
 $\overrightarrow{c}\{c^1,c^2,c^3\}\\$
@@ -401,8 +400,8 @@ $\Delta2=\begin{vmatrix}
 \\$
 Если $\Delta1$ и $\Delta2$ имеют одинаковый знак, то с ориентацией все хорошо и стоит переходить к нормированию.
 \newpage
-\section{Кординатные системы\newlineВиды и связь между ними}
-\subsection{Декартова прямоугольная координатная система}
+\chapter{Кординатные системы\newlineВиды и связь между ними}
+\section{Декартова прямоугольная координатная система}
 $V^2\ \ \ \ \ \ \ \ \beta=\{\overrightarrow{e^1},\overrightarrow{e^2}\}\\$
 Координаты в декартовой системе - произведение числа на базисный вектор. К примеру координаты некоторого вектора $\overrightarrow{a} \in \beta$ будут выглядеть как:\\
 $\overrightarrow{a}=\{a^1*\overrightarrow{e^1},a^2*\overrightarrow{e^2}\}$\\
@@ -417,11 +416,11 @@ $\overrightarrow{a}=\{a^1*\overrightarrow{e^1},a^2*\overrightarrow{e^2}\}$\\
         \tkzDrawSegment[-Triangle](C,D)
     \end{tikzpicture}
 \end{figure}
-\subsection{Афинная координатная система}
+\section{Афинная координатная система}
 %%ПЕРЕРЫВ ДО ПОЯНЕНИЙ
 \newpage
-\section{Деление отрезка на части}
-\subsection{На две равные части}
+\chapter{Деление отрезка в заданном соотношении}
+\section{На две равные части}
 Дано:\\
 M(x,y)\ \ \ \ \ \ \ N($\eta,\nu$)\\
 |MS|=|SN|\\
@@ -444,7 +443,7 @@ $\{s^1-\lambda;s^2-\mu\}=\frac{1}{2}\{\eta-\lambda,\nu-\mu\}\\$
 \end{equation}\\
 Итого координаты точки:
 \fbox{$S(\frac{\eta+\lambda}{2},\frac{\nu+\mu}{2})$}
-\subsection{На две произвольные части}
+\section{На две произвольные части}
 Дано:\\
 M(x,y)\ \ \ \ \ \ \ N($\eta,\nu$)\\
 Цель: найти координаты точки S\\
@@ -460,4 +459,186 @@ M(x,y)\ \ \ \ \ \ \ N($\eta,\nu$)\\
 \paragraph{$\overline{MS}:\overline{MN}=k\\$}
 \fbox{$S(\frac{k\eta+\lambda}{k+1},\frac{k\nu+\mu}{k+1})$}\\
 \fbox{Отрицательный результат означает что такая точка находится вне отрезка\\}
+\chapter{Уравнение прямой на плоскости}
+$M \in (AB) \longleftrightarrow \exists \lambda \in \mathbb{R} : AM = \lambda\overline{AB}$, где координаты точки M(x,y).
+Отсюда: $\{x-a^1,y-a^2\}=\lambda\{b^1-a^1,b^2-a^2\}$
+\begin{figure}[h!]
+    \begin{tikzpicture}        
+        \tkzDefPoint(1,0.25){A} \tkzDrawPoint(A) \tkzLabelPoint[above,black](A){$A$}
+        \tkzDefPoint(3,0.75){B} \tkzDrawPoint(B) \tkzLabelPoint[above,black](B){$B$}
+        \tkzDefPoint(0,0){C} 
+        \tkzDefPoint(4,1){D} 
+        \tkzDrawSegment(C,D)
+    \end{tikzpicture}
+\end{figure}
+\section{Параметрическое уравнение}
+
+\begin{equation}
+    \begin{cases}
+      x-a^1=\lambda(b^1-a^1)\\
+      y-a^2=\lambda(b^2-a^2)
+    \end{cases}
+\Leftrightarrow
+    \begin{cases}
+      x=a^1+\lambda(b^1-a^1)\\
+      y=b^1+\lambda(b^2-a^2) 
+    \end{cases}
+\end{equation}\\
+
+Где $a^1$ и $b^1$ - координаты точки принадлежащей, а $(b^1-a^1)$ и $(b^2-a^2)$ координаты направляющего вектора.\\
+$
+    \begin{pmatrix}
+        {x}\\
+        {y}
+    \end{pmatrix}
+ = 
+\begin{pmatrix}
+    {a^1}\\
+    {b^1}
+\end{pmatrix} + \lambda
+\begin{pmatrix}
+    {b^1} & {-a^1}\\
+    {b^2} & {-a^2}
+\end{pmatrix}$\\
+\section{Каноническое}
+$\frac{x-a^1}{b^1-a^1}=\frac{y-a^2}{b^2-a^2}=\lambda$ При условии того что $a$ и $b$ не дают 0\\
+%%$M \in (AB) \Leftrightarrow \overline{AM}||\overline{AB} \Leftrightarrow \exists \lambda \in \mathbb{R} AM=\lambda\overline{AB}$
+\section{Общего вида}
+$\begin{vmatrix}
+    x-a^1 & b^1-a^2\\
+    y-a^1 & b^2-a^2
+\end{vmatrix}=0=(x-a^1)(b^2-a^2)-(b^1-a^1)(y-a^2)=xb^2-xa^2-a^1b^2+a^1a^2-b^1y+b^1a^2+a^1y-a^1a^2=(b^2-a^2)x+(a^1-b^1)y-(a^1b^2-a^2b^1)$\\
+Введем обозначения:\\
+$A=b^2-a^2\\$
+$B=a^1-b^1\\$
+$C=a^2b^1-a^1b^2\\$
+Отсюда можно получить $l:Ax+By+c=0 <-$ линейное уравнение 2х неизвестных если $A \neq 0 || B \neq 0$
+\section{Уравнение в отрезках}
+Получаемое из общего вида при условии что $C\neq0$\\
+$l:\frac{x}{a}+\frac{y}{b}=1$ или $\frac{x}{\frac{c}{a}}+\frac{y}{\frac{c}{b}}=\frac{-c}{c}$
+\chapter{Способы задания прямой на плоскости}
+\section{По точке и направляющему вектору или по двум точкам}
+$l^A \in l,\overrightarrow{p}||l$\\
+$A(a^1,a^2),B(b^1,b^2),\overrightarrow{p}\{p^1,p^2\}$ или $p\{b^1-a^1,b^2-a^2\}$
+\subsection{Каноническое}
+$l:\frac{x-a^1}{p^1}=\frac{y-a^2}{p^2}$
+\subsection{Параметрическое}
+$l:$
+\begin{equation}
+    \begin{cases}
+      x=a^1+\lambda*p^1\\
+      y=b^1+\lambda*p^2 
+    \end{cases}
+\end{equation}\\
+\subsection{Общего вида}
+Пусть:\\
+$p^2=A\\$
+$-p^1=B\\$
+$p^1a^2-p^2a^1=C\\$
+Тогда $Ax+By+C=0\\$
+Или $l:\begin{vmatrix}
+    x-a^1 & b^1-a^2\\
+    y-a^1 & b^2-a^2
+\end{vmatrix}=p^2x-p^2a^1-p^1y+p^1a^2=p^2x-p^1y+(-p^2a^1+p^1a^2)$\\
+\section{По точке принадлежащей и вектору нормали}
+$l^A \in l,\overrightarrow{n} \perp l$\\
+$A(a^1,a^2),B(b^1,b^2),\overrightarrow{n}\{n^1,n^2\}$
+\subsection{Общего вида}
+$\overrightarrow{AM}*\overrightarrow{n}=0 -> \{x-a^1;y-a^2\}*\{n^1;n^2\}=0\\$
+Откуда\\
+$n^1(x-a^1)+n^2(y-a^2)=0\\$
+$n^1x+n^2y-(n^1a^1+n^2a^2)=0\\$
+$n^1x+n^2y+(-n^1a^1-n^2a^2)=0\\$
+$A=n^1\\$
+$B=n^2\\$
+$C=-(n^1a^1+n^2a^2)\\$
+\subsection{Параметрическое уравнение}
+\begin{equation}
+    \begin{cases}
+      x-a^1=\lambda(b^1-a^1)\\
+      y-a^2=\lambda(b^2-a^2)
+    \end{cases}\lambda \in \mathbb{R}
+\end{equation}
+\subsection{Каноническое уравнение}
+$l:\frac{x-a^1}{-n^2}=\frac{y-a^2}{n^1}$
+\chapter{Прямая на плоскости}
+$l_1: A^1x+B^1y+C^1=0\\$
+$l_2: A^2x+B^2y+C^2=0\\$
+\section{Взаимное расположение прямых на плоскости}
+Существует три вида расположения прямой на плоскости:
+\begin{itemize}
+    \item $l_1||l_2$
+    \item $l_1 \cap l_2$
+    \item $l^1 \equiv l^2$
+\end{itemize}
+\paragraph*{Определить взаимное расположение можно при помощи решения системы уравнений:}
+\begin{equation}
+    \begin{cases}
+        A^1x+B^1y+C^1=0\\
+        A^2x+B^2y+C^2=0
+    \end{cases}
+\end{equation}
+Если:
+\begin{itemize}
+    \item одно решение - прямые пересекаются (2)
+    \item множество решений - прямые совпадают (3)
+    \item нет решений - прямые параллельны (1)
+\end{itemize}
+\paragraph*{Определить взаимное расположение можно при помощи пропорции:}
+$\frac{A^1}{A^1}=\frac{B^1}{B^2}$=$\frac{C^1}{C^2}$\\
+Если:
+\begin{itemize}
+    \item $\frac{A^1}{A^1} \neq \frac{B^1}{B^2} \neq \frac{C^1}{C^2}$ - прямые пересекаются (2)
+    \item $\frac{A^1}{A^1} = \frac{B^1}{B^2} = \frac{C^1}{C^2}$ - прямые совпадают (3)
+    \item $\frac{A^1}{A^1} = \frac{B^1}{B^2} \neq \frac{C^1}{C^2}$ - прямые параллельны (1)
+\end{itemize}
+\paragraph*{Определить взаимное расположение можно при помощи векторов нормали:}
+\begin{itemize}
+    \item $\overrightarrow{n^1} \nparallel \overrightarrow{n^2}$ - прямые пересекаются (2)
+    \item $\overrightarrow{n^1} || \overrightarrow{n^2}$ - прямые параллельны (1) или прямые совпадают (3)
+\end{itemize}
+\section{Угол между прямыми на плоскости}
+$l_1: A_1x+B_1y+C_1=0 \ \ \ \ \ \overrightarrow{n_1}\{a_1,b_1\} \ \ \ \overrightarrow{p_1}\{-b_1,a_1\}$\\
+$l_2: A_2x+B_2y+C_2=0 \ \ \ \ \ \overrightarrow{n_2}\{a_2,b_2\} \ \ \ \overrightarrow{p_2}\{-b_2,a_2\}$\\
+\fbox{Углом между двумя прямыми считают наименьший образовавшийся}
+$\varphi \in [0^\circ,90^\circ]$
+$cos\angle\left\langle\overrightarrow{p^1},\overrightarrow{p^2}\right\rangle=\vert\frac{\overrightarrow{p^1}*\overrightarrow{p^2}}{|\overrightarrow{p^1}|*|\overrightarrow{p^2}|}\vert => \frac{|\overrightarrow{p^1}*\overrightarrow{p^2}|}{|\overrightarrow{p^1}|*|\overrightarrow{p^2}|}=>$
+\fbox{$\frac{|a^1a^2+b^1b^2|}{\sqrt{a_1^2+b_1^2}*\sqrt{a_2^2+b_2^2}}$}=
+\fbox{$\frac{|\overrightarrow{n^1}*\overrightarrow{n^2}|}{|\overrightarrow{n^1}|*|\overrightarrow{n^2}|}$}\\
+$cos\angle\left\langle l^1,l^2 \right\rangle=|cos\angle\left\langle\overrightarrow{p^1},\overrightarrow{p^2}\right\rangle|$
+
+$l1: A_1x+B_1y+C_1=0 -> \overrightarrow{n_1}\{A_1,B_1\}$\\
+$l2: A_2x+B_2y+C_2=0 -> \overrightarrow{n_2}\{A_2,B_2\}$\\
+$\overrightarrow{n_1}\vee\overrightarrow{n_2}=
+\begin{vmatrix}
+    A_1 & B_1\\
+    A_2 & B_2
+\end{vmatrix}=|\overrightarrow{n_1}|*|\overrightarrow{n_2}|*sin(\varphi)\\$
+$sin(\varphi)=\frac{|A_1B_2-A_2B_1|}{\sqrt{A_1^2+B_1^2}*\sqrt{A_2^2+B_2^2}}\\$
+$|tg(\varphi)|=|\frac{A_2B_1-A_1B_2}{B_1B_2+A_1A_2}|\\$
+\section{Расстояние от точки до прямой}
+$l: Ax+By+C=0\\$
+$M(m_1,m_2)$
+\fbox{
+$\rho(M;l)=\frac{|A_1m_1+Bm_2+C|}{\sqrt{A^2+B^2}}$
+}
+\section{Расстояние от прямой до прямой}
+Существует два варианта:
+\begin{itemize}
+    \item конкретное значение, если прямые параллельны
+    \item неопределенное расстояние, если прямые пересекаются
+\end{itemize}
+\subsection{Переход к расстоянию от точки до прямой}
+$l: A_1x+B_1y+C_1=0 -> \overrightarrow{n_1}\{A_1,B_1\}$\\
+$m: A_2x+B_2y+C_2=0 -> \overrightarrow{n_2}\{A_2,B_2\}$\\
+$M(m_1,m_2) \in m\\$
+Фактически все сводится к поиску расстояния от точки, принадлежащей одной из прямых до второй прямой.
+\fbox{$\rho(l;m)=\frac{|C^1-\frac{A^1}{A^2}*C^2}{\sqrt{A^2+B^2}}$}
+\subsection{Частная формула для параллельных прямых}
+Если преобразовать уравнение прямой m с учетом пропорциональности первых двух коэфициентов в уравнениях прямых l и m,оно примет вид $A_1+B_1+C'=0$ и мы можем использовать данное уравнение:\\
+\fbox{$\rho(l;m)=\frac{|C'-C_1|}{\sqrt{A^2+B^2}}$}
+\subsection{Примечания}
+$a*b*sin(\phi)=|\overrightarrow{a}|*|\overrightarrow{b}|*\sqrt{1-cos^2(\phi)}|\\$
+$a*b*sin(\phi)=|\overrightarrow{a}|*|\overrightarrow{b}|*\sqrt{1-(\frac{\overrightarrow{a}*\overrightarrow{b}}{|\overrightarrow{a}|*|\overrightarrow{b}|})^2}\\$
+$a*b*sin(\phi)=|\overrightarrow{a}|*|\overrightarrow{b}|*\frac{\sqrt{\overrightarrow{a^2}*\overrightarrow{b^2}-(a*b)^2}}{|\overrightarrow{a}|*|\overrightarrow{b}|}|\\$
 \end{document}
