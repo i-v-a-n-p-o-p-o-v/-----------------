@@ -564,8 +564,8 @@ $l:\frac{x-a^1}{-n^2}=\frac{y-a^2}{n^1}$
 \chapter{Прямая на плоскости}
 $l_1: A^1x+B^1y+C^1=0\\$
 $l_2: A^2x+B^2y+C^2=0\\$
-\section{Взаимное расположение прямых на плоскости}
-Существует три вида расположения прямой на плоскости:
+\section{Взаимное расположение двух прямых на плоскости}
+Существует три вида расположения двух прямых на плоскости:
 \begin{itemize}
     \item $l_1||l_2$
     \item $l_1 \cap l_2$
@@ -641,4 +641,82 @@ $M(m_1,m_2) \in m\\$
 $a*b*sin(\phi)=|\overrightarrow{a}|*|\overrightarrow{b}|*\sqrt{1-cos^2(\phi)}|\\$
 $a*b*sin(\phi)=|\overrightarrow{a}|*|\overrightarrow{b}|*\sqrt{1-(\frac{\overrightarrow{a}*\overrightarrow{b}}{|\overrightarrow{a}|*|\overrightarrow{b}|})^2}\\$
 $a*b*sin(\phi)=|\overrightarrow{a}|*|\overrightarrow{b}|*\frac{\sqrt{\overrightarrow{a^2}*\overrightarrow{b^2}-(a*b)^2}}{|\overrightarrow{a}|*|\overrightarrow{b}|}|\\$
+\newpage
+\chapter{Геометрическое место точек на плоскости}
+\section{Кривые второго порядка}
+Уравнение кривой второго порядка выглядит следующим образом:\\
+$\gamma:a_{11}x^2+2a_{12}xy+a_{22}y^2+2a_{10}x+2a_{20}y+a_{00}=0$\\
+Где:\\
+$a_{11}x^2+2a_{12}xy+a_{22}y^2$ - коэфициенты квадратичной формы\\
+$2a_{10}x+2a_{20}y$ - линейные компоненты\\
+$a_{00}$ - свободный член.\\
+ранее коэфициент квадратичной формы мы встерчали в подсчете модуля вектора в афинном пространстве, и фактически он является симметрической матрицей:
+$g(x;y)=a_{11}x^2+a_{12}xy+a_{22}y^2=A$
+$
+\begin{pmatrix}
+    {a_{11}} && {a_{12}}\\
+    {a_{12}} && {a_{22}}
+\end{pmatrix}
+$
+\section{Определение типа прямой}
+Для определения прямой есть два варианта:
+\subsection{Первый ($a_{12}$) - простой}
+\subsubsection{Стандартно}
+Все решается путем выделения полного квадрата:
+$a_{11}(x^2+2\frac{a_{10}}{a_{11}}x)+a_{22}(y^2+2\frac{a_{20}}{a_{22}}y)+a_{00}=0\\$
+. . .
+$(\frac{a_{10}}{a_{11}})^2+(\frac{a_{20}}{a_{22}})^2-a_{00}=0\\$
+Но это сработает при условии что \fbox{$a_{11},a_{22} \neq 0$}
+\subsubsection{$a_11=0$}
+$a_{22}y^2+a_{20}y+a_{00}=0\\$
+$2a_{10}x+a_{22}(y+\frac{a_{20}}{a_{22}})^2=(\frac{a_{20}}{a_{22}})^2-a_{00}$
+\subsubsection{$a_22=0$}
+$a_{22}y^2+a_{20}y+a_{00}=0\\$
+$a_{11}(x+\frac{a_{10}}{a_{11}})^2+2a_{20}y=(\frac{a_{10}}{a_{11}})^2-a_{00}$
+\subsection{Второй ($a_{12} \neq 0$) Всё плохо}
+\subsubsection{Метод 1 алгебраический}
+Путем перехода
+$A\begin{pmatrix}
+    {a_{11}} && {a_{12}}\\
+    {a_{12}} && {a_{22}}
+\end{pmatrix}
+\backsim B
+\begin{pmatrix}
+    {b_1} && {0}\\
+    {0} && {b_{2}}
+\end{pmatrix}\\
+$
+$
+det\begin{pmatrix}
+    A-\lambda E
+\end{pmatrix}
+$<- характеристическое уравнение\\
+$
+\begin{vmatrix}
+    {a_{11}-\lambda} && {a_{12}}\\
+    {a_{12}} && {a_{22}-\lambda}
+\end{vmatrix}$
+$
+=(a_{11}-\lambda)(a_{22}-\lambda)-a_{12}^2=a_{11}a_{22}-\lambda(a_{11}+a_{22})+\lambda^2-a_{12}^2=\lambda^2-a_{11}a_{22}-\lambda(a_{11}+a_{22}-a_{12}^2)=0\\
+$
+Решив полученое уравнение мы получим $\lambda_1$ и $\lambda_2\\$
+$g'(x';y')=\lambda_1(x')^2+\lambda_2(y')^2\\$
+Собственные векторы:\\
+\begin{equation}\lambda_i=>
+    \begin{cases}
+        (a_{11}-\lambda_i)x+a_{12}y=0\\
+        a_{12}x+(a_{12}-\lambda_i)y=0
+    \end{cases}
+\end{equation}
+Решения данного уровнения дадут $\overrightarrow{n_1}\{\lambda,\mu\}$ для $\lambda_1$ и$\overrightarrow{n_2}\{\phi,\psi\}$ для $\lambda_2$\\
+И это даст нам вектроры нового базиса, а значит получим формулу перехода:\\
+\begin{equation}
+    \begin{cases}
+        x=\lambda x'+\phi y'\\
+        y=\mu x'+\psi y'
+    \end{cases}
+\end{equation}\\
+Итого:\\
+$\gamma: \lambda_1(x')^2+\lambda_2(y')^2+2(a_{10}\lambda+a_{20}\mu)x'+2(a_{10}\phi+a_{20}\psi)y'+a_{00}=0\\$
+Отсюда мы уже можем перейти в способ I\\
 \end{document}
